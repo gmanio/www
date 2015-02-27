@@ -1,4 +1,5 @@
-var DBconnection = function(mysql){
+
+DBConnect = function(mysql){
     this.pool = mysql.createPool({
         host     : 'go.gman.io',
         user     : 'root',
@@ -9,17 +10,14 @@ var DBconnection = function(mysql){
     });
 }
 
-DBconnection.prototype = {
+DBConnect.prototype = {
     sendConnectQuery: function(ip, userAgent){
-        var conn = this.pool;
-
-        conn.query('INSERT INTO test.connection SET ?', {'ip':ip, 'ua':userAgent},
+        this.pool.query('INSERT INTO test.connection SET ?', {'ip':ip, 'ua':userAgent},
             function(err, result){
                 if(err) throw err;
-                console.log(result);
             }
         )
     }
 }
 
-module.exports = DBconnection;
+module.exports = new DBConnect(require('mysql'));
