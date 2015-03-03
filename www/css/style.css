@@ -15,4 +15,4 @@ a{color:inherit;text-decoration:none}
 .blind{position:absolute;visibility:hidden;overflow:hidden;width:0;height:0;padding:0;margin:0;font-size:0;line-height:0}
 
 .logo{position:fixed;right:0;bottom:0;opacity:0.5}
-.logo_desc{position:absolute;display:inline-block;top:70px;text-align:right;font-size:11px;line-height:13px}
+.logo_desc{position:absolute;display:inline-block;top:70px;right:8px;text-align:right;font-size:11px;line-height:13px}

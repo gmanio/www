@@ -5,6 +5,8 @@
   "author": "GMAN",
   "dependencies": {
     "express": "^4.10.6",
+    "mongodb": "^1.4.32",
+    "mongoose": "^3.8.24",
     "mysql": "^2.5.4"
   }
 }
