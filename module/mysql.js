@@ -20,4 +20,3 @@ DBConnect.prototype = {
 }
 
 module.exports = new DBConnect(require('mysql'));
-http://api.seibro.or.kr/openapi/service/StockSvc/getStkIsinByNm?secnNm=삼성&numOfRows=2&pageNo=2&ServiceKey=H7yH0uPAmfUdk0x39uPi51l3fPiaCoslBi/az94xW4x42x+a/zdo5YZret/GwBNU0DoraBzYLHMoQXVWho6Rkw==
