@@ -20,5 +20,3 @@ MongoClient.connect('mongodb://go.gman.io:27017/local', function(err, db) {
         });
     });
 })
-
-module.exports = 
