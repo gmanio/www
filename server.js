@@ -36,9 +36,10 @@ app.post('/stockData', function(req, res){
         if(err) throw err;
 
         var data = JSON.parse(req.body.data);
-
-        var collection = db.collection('stock');
-        collection.save(data, function(){
+        
+	var collection = db.collection('stock');
+        
+	collection.save(data, function(){
             console.log('saved');
         });
 
@@ -46,7 +47,7 @@ app.post('/stockData', function(req, res){
                 collection.find().toArray(function(err, results) {
                     db.close();
                 });
-        })
+        },1000)
     })
 
 })
