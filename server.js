@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
-var MongoClient = require('mongodb').MongoClient;
+/*var bodyParser = require('body-parser');
+var MongoClient = require('mongodb').MongoClient;*/
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -17,19 +17,18 @@ app.use('/css', express.static(__dirname + '/www/css'));
 app.use('/img', express.static(__dirname + '/www/img'));
 
 app.get('/', function(req, res){
-    //mysql.sendConnectQuery(req.ip, req.get('user-agent'));
     var options = {
         root: __dirname + '/www/view'
-    };
+    }
     res.sendFile('index.html',options);
-});
+})
 
 app.get('/stock', function(req, res){
     var options = {
         root: __dirname + '/www/view'
-    };
+    }
     res.sendFile('stock.html',options);
-});
+})
 
 app.post('/stockData', function(req, res){
     MongoClient.connect('mongodb://go.gman.io:27017/local', function(err, db) {
@@ -41,13 +40,13 @@ app.post('/stockData', function(req, res){
         
 	collection.save(data, function(){
             console.log('saved');
-        });
+        })
 
         setTimeout(function(){
                 collection.find().toArray(function(err, results) {
                     db.close();
-                });
-        },1000)
+                })
+        },500)
     })
 
 })
