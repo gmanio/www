@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var mysql = require('./module/mysql.js');
+//var mysql = require('./module/mysql.js');
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -13,7 +13,7 @@ app.use('/css', express.static(__dirname + '/www/css'));
 app.use('/img', express.static(__dirname + '/www/img'));
 
 app.get('/', function(req, res){
-    mysql.sendConnectQuery(req.ip, req.get('user-agent'));
+//    mysql.sendConnectQuery(req.ip, req.get('user-agent'));
     var options = {
         root: __dirname + '/www/view/'
     };
@@ -27,4 +27,4 @@ app.get('/socket', function(req, res){
     res.sendFile('socket.html', options);
 });
 
-app.listen(7777);
+app.listen(3000);
